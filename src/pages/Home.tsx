@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { Mail, Shield, ArrowRight } from "lucide-react";
 
 export function Home() {
@@ -63,17 +62,17 @@ export function Home() {
         <div className="text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-              <Link to="/contact" className="flex items-center gap-2">
+              <a href="contact.html" className="flex items-center gap-2">
                 <Mail className="w-5 h-5" />
                 お問い合わせ
                 <ArrowRight className="w-5 h-5" />
-              </Link>
+              </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="px-8 py-3">
-              <Link to="/privacy" className="flex items-center gap-2">
+              <a href="privacy.html" className="flex items-center gap-2">
                 <Shield className="w-5 h-5" />
                 プライバシーポリシー
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

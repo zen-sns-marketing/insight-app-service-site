@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 export function Privacy() {
@@ -9,10 +8,10 @@ export function Privacy() {
       <div className="container mx-auto px-6 py-12">
         <div className="mb-8">
           <Button asChild variant="ghost" className="mb-4">
-            <Link to="/" className="flex items-center gap-2">
+            <a href="index.html" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
               ホームに戻る
-            </Link>
+            </a>
           </Button>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">プライバシーポリシー</h1>
           <p className="text-gray-600">最終更新日: 2025年6月6日</p>
@@ -133,7 +132,7 @@ export function Privacy() {
                 本プライバシーポリシーに関するお問い合わせは、以下のお問い合わせページからご連絡ください。
               </p>
               <Button asChild className="bg-blue-600 hover:bg-blue-700">
-                <Link to="/contact">お問い合わせページへ</Link>
+                <a href="contact.html">お問い合わせページへ</a>
               </Button>
             </CardContent>
           </Card>

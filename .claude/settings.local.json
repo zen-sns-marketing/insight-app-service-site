@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(bun add:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(bun remove:*)",
+      "Bash(bun run:*)",
+      "Bash(pkill:*)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }

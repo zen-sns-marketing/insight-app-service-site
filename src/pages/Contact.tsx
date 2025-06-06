@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Link } from "react-router-dom";
 import { ArrowLeft, Mail, MessageSquare, User } from "lucide-react";
 import { useState } from "react";
 
@@ -32,10 +31,10 @@ export function Contact() {
       <div className="container mx-auto px-6 py-12">
         <div className="mb-8">
           <Button asChild variant="ghost" className="mb-4">
-            <Link to="/" className="flex items-center gap-2">
+            <a href="index.html" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
               ホームに戻る
-            </Link>
+            </a>
           </Button>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">お問い合わせ</h1>
           <p className="text-gray-600">

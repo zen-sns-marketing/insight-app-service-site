@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 import { build, type BuildConfig } from "bun";
 import plugin from "bun-plugin-tailwind";
-import { existsSync } from "fs";
+import { existsSync, copyFileSync } from "fs";
 import { rm } from "fs/promises";
 import path from "path";
 
@@ -148,6 +148,12 @@ const result = await build({
   minify: true,
   target: "browser",
   sourcemap: "linked",
+  splitting: true,
+  naming: {
+    entry: "[dir]/[name].[ext]",
+    chunk: "chunks/[name]-[hash].[ext]",
+    asset: "assets/[name]-[hash].[ext]"
+  },
   define: {
     "process.env.NODE_ENV": JSON.stringify("production"),
   },
@@ -165,5 +171,16 @@ const outputTable = result.outputs.map(output => ({
 
 console.table(outputTable);
 const buildTime = (end - start).toFixed(2);
+
+// Copy static assets
+const staticAssets = ["logo.svg", "react.svg"];
+for (const asset of staticAssets) {
+  const srcPath = path.join("src", asset);
+  const destPath = path.join(outdir, asset);
+  if (existsSync(srcPath)) {
+    copyFileSync(srcPath, destPath);
+    console.log(`📁 Copied ${asset} to dist/`);
+  }
+}
 
 console.log(`\n✅ Build completed in ${buildTime}ms\n`);
