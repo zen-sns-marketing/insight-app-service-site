@@ -6,7 +6,9 @@
       "Bash(bun remove:*)",
       "Bash(bun run:*)",
       "Bash(pkill:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(rm:*)",
+      "Bash(ls:*)"
     ],
     "deny": []
   }
